@@ -1,0 +1,81 @@
+body {
+  background: #111;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: hidden;
+  cursor: none;
+}
+/* parallax */
+section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section img {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+section h2 {
+  position: relative;
+  color: #fff;
+  font-size: 11em;
+  margin: 0;
+}
+
+/* cursoe  */
+#cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border: 4px solid wheat;
+  transition: 0.1s;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  display: flex;
+  mix-blend-mode: difference;
+}
+#cursor2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  transition: 0.15s;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+h2:hover ~ #cursor {
+  transform: translate(-50%, -50%);
+  background: #ffffff95;
+  border-style: dotted;
+  animation: anmition 0.4s infinite linear;
+  border-color: black;
+  transition: 0.1s;
+}
+h2:hover ~ #cursor2,
+#cursor img {
+  opacity: 0;
+}
+
+@keyframes anmition {
+  0% {
+    transform: translate(-50%, -50%) rotate(0) scale(1.5);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(365deg) scale(1.5);
+  }
+}
